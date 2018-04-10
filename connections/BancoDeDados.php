@@ -36,7 +36,7 @@ class BancoDeDados extends PDO{
 	// Método que recebe um parametro unico, logo, será necessário especificar a chave($key) e o valor($value)
 	private function setParam($stmt, $key, $value){
 
-		$stmt->bindValue($key, $value);
+		$stmt->bindParam($key, $value);
 
 	}
 	// Método para executar o select

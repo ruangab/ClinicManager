@@ -1,4 +1,4 @@
-<!doctype html>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -38,7 +38,7 @@
                         <img class="align-content" src="../images/logon.png" alt="">
                 </div>
                 <div class="login-form">
-                    <form action="../site_component/inicio.php" method="POST">
+                    <form action="" method="POST">
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" class="form-control" placeholder="Email">
