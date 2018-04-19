@@ -57,11 +57,8 @@
 		$usuario->setTypeUser($type_user);
 
 		$usuario->insert();
-
 		
-
 	});
-
 
 
 // --------------------------------------inicio da pagina-------------------------------------------------
@@ -74,7 +71,7 @@
 	});
 	
 	$app->get('/recepcao', function() use($app){
-
+		
 		$tpl = new Tpl();
 
 		$tpl->draw('recepcao');
@@ -99,6 +96,10 @@
 		$paciente->setDescricao($descricao);
 
 		$paciente->insert();
+
+		$tpl = new Tpl();
+		
+		$tpl->draw('recepcao');
 
 	});
 
