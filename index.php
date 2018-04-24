@@ -18,14 +18,14 @@
 	Tpl::configure( $config );
 
 // --------------------------------------Área de login da pagina------------------------------------------
-	$app->get('/', function() use($app){
+	$app->get('/index/', function() use($app){
 		
 		$tpl = new Tpl();
 
 		$tpl->draw('login');
 
 	});
-	$app->post('/', function() use($app){
+	$app->post('/index/', function() use($app){
 
 		$user = $_POST['user'];
 		$pass = $_POST['pass'];
@@ -44,7 +44,15 @@
 
 	});
 		
-	$app->post('/registro', function () use($app){
+	$app->get('/registro/', function(){
+
+		$tpl = new Tpl();
+
+		$tpl->draw('registro');
+			
+	});
+
+	$app->post('/registro/', function () use($app){
 
 		$user = $_POST['user'];
 		$pass = $_POST['pass'];
@@ -57,27 +65,25 @@
 		$usuario->setTypeUser($type_user);
 
 		$usuario->insert();
+
+		$tpl = new Tpl();
+
+		$tpl->draw('registro');
 		
 	});
 
 
 // --------------------------------------inicio da pagina-------------------------------------------------
-	$app->post('/inicio', function(){
 
-			$tpl = new Tpl();
-
-			$tpl->draw('inicio');
-			
-	});
 	
-	$app->get('/recepcao', function() use($app){
+	$app->get('/recepcao/', function() use($app){
 		
 		$tpl = new Tpl();
 
 		$tpl->draw('recepcao');
 
 	});
-	$app->post('/recepcao', function() use($app){
+	$app->post('/recepcao/', function() use($app){
 
 		$idsus = $_POST['idsus'];
 		$name_patient = $_POST['name_patient'];
@@ -103,7 +109,7 @@
 
 	});
 
-	$app->get('/inicio', function(){
+	$app->post('/inicio/', function(){
 
 		$tpl = new Tpl();
 
